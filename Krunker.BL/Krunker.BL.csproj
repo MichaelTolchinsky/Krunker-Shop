@@ -121,7 +121,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Service.cs" />
+    <Compile Include="Service\DataService.cs" />
     <EmbeddedResource Include="Properties\Krunker.BL.rd.xml" />
   </ItemGroup>
   <ItemGroup>

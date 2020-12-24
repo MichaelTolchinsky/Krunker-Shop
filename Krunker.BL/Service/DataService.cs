@@ -1,48 +1,42 @@
 ﻿using ConsoleAppDataBSela.Model;
-using Krunker.Common;
 using Krunker.Common.Api;
+using Krunker.Common;
 using Krunker.DAL.Repository;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls.Primitives;
 
 namespace Krunker.BL.Service
 {
-    public class Service : IService
+    public class DataService : IDataService
     {
-
         public event EventHandler<AbstractItem> OutOfStockEventHandler;
+        public List<ShoppingCartItems> CartItems { get; }
 
-        private BackItemRepository bags;
-        private HeadItemRepository hats;
-        private PrimaryWeaponsRepository primaryWeapons;
-        private SecondaryWeaponRepository secondaryWeapons;
+        private readonly BackItemRepository bags;
+        private readonly HeadItemRepository hats;
+        private readonly PrimaryWeaponsRepository primaryWeapons;
+        private readonly SecondaryWeaponRepository secondaryWeapons;
 
-        private Dictionary<Type, AbstractItem> shoppingCart;
+        private readonly Dictionary<Type, AbstractItem> shoppingCart;
 
-        private List<AbstractItem> items;
+        private readonly List<AbstractItem> items;
         /// <summary>
         /// Carts list for the report
         /// </summary>
-        public List<ShoppingCartItems> cartItems { get; }
 
         /// <summary>
         /// singelton Service
         /// </summary>
-        private static Service instance = null;
-        public static Service Instance
+        private static DataService instance = null;
+        public static DataService Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new Service();
+                    instance = new DataService();
                 }
                 return instance;
             }
@@ -51,12 +45,12 @@ namespace Krunker.BL.Service
         /// <summary>
         ///Ctor Creates repositories and adds items to items list
         /// </summary>
-        private Service()
+        private DataService()
         {
             items = new List<AbstractItem>();
             shoppingCart = new Dictionary<Type, AbstractItem>();
 
-            cartItems = new List<ShoppingCartItems>();
+            CartItems = new List<ShoppingCartItems>();
 
             
             primaryWeapons = new PrimaryWeaponsRepository();
@@ -97,18 +91,6 @@ namespace Krunker.BL.Service
                 {typeof(BackItem),() => bags.ItemCreate((BackItem)item) },
             };
             methodType[item.GetType()]();
-        }
-        /// <summary>
-        /// Indexer to get specific item
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public AbstractItem this[int id]
-        {
-            get
-            {
-                return items.FirstOrDefault(x => x.Id == id);
-            }
         }
 
         public void AddToCart(AbstractItem item)
@@ -157,7 +139,7 @@ namespace Krunker.BL.Service
                 if (it.CurrentAmout == 0)
                     OutOfStockEventHandler?.Invoke(this, it);
             }
-            cartItems.Add(new ShoppingCartItems(cart));
+            CartItems.Add(new ShoppingCartItems(cart));
             shoppingCart.Clear();
         }
 

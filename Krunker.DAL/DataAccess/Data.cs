@@ -4,21 +4,16 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Storage;
-using Windows.UI.Xaml;
 
 namespace Krunker.DAL.DataAccess
 {
     public class Data
     {
-        string path = Path.Combine(ApplicationData.Current.LocalFolder.Path, "KrunkerFile.json");
-        string path2 = Path.Combine(ApplicationData.Current.LocalFolder.Path, "KrunkerFileCarts.json");
-        /// <summary>
-        /// Create json file
-        /// </summary>
+        readonly string path = Path.Combine(ApplicationData.Current.LocalFolder.Path, "KrunkerFile.json");
+        readonly string path2 = Path.Combine(ApplicationData.Current.LocalFolder.Path, "KrunkerFileCarts.json");
+
+        // Create json file
         public void CreateJson()
         {
             if (!File.Exists(path))
@@ -26,20 +21,15 @@ namespace Krunker.DAL.DataAccess
             if (!File.Exists(path2))
                 using (FileStream file = new FileStream(path2, FileMode.Create)) { file.Close(); }
         }
-        /// <summary>
-        /// Writes to json file,and overrides previus json
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="cartitems"></param>
-        /// <returns></returns>
+
+        // Writes data to json file,and overrides previus json
         public bool WriteToJson(List<AbstractItem> items, List<ShoppingCartItems> cartitems)
         {
-            bool flag = false;
+            bool flag;
             if (File.Exists(path))
             {
                 string json = JsonConvert.SerializeObject(items, Formatting.Indented, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All });
                 File.WriteAllText(path, json);
-                flag = true;
             }
             if (File.Exists(path2))
             {
@@ -51,10 +41,8 @@ namespace Krunker.DAL.DataAccess
 
             return flag;
         }
-        /// <summary>
-        /// Read from json file
-        /// </summary>
-        /// <returns></returns>
+
+        // Read Data from json file
         public Tuple<List<AbstractItem>, List<ShoppingCartItems>> ReadFromJson()
         {
             List<AbstractItem> ReturnList = null;

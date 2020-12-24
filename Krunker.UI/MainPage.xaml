@@ -2,7 +2,6 @@
     x:Class="Krunker.UI.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Krunker.UI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -65,7 +64,7 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-                    <Button Grid.Row="3" Grid.Column="2" FontSize="33" FontWeight="SemiBold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="GoTOReport" Content="Report" Click="GoTOReport_Click"/>
+                    <Button Grid.Row="3" Grid.Column="2" FontSize="33" FontWeight="SemiBold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="GoTOReport" Content="Report" Click="GoToReport_Click"/>
         <ListView x:Name="ShopListLv" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ListView x:Name="ShopListItems" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="425">
             <ListView.ItemTemplate>

@@ -1,13 +1,9 @@
 ﻿using ConsoleAppDataBSela.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Krunker.Common.Api
 {
-    public interface IService
+    public interface IDataService
     {
         // Return the list of all items in Repository
         List<AbstractItem> GetAllItems();

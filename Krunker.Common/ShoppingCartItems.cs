@@ -1,15 +1,10 @@
 ﻿using ConsoleAppDataBSela.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Krunker.Common
 {
-    /// <summary>
-    /// Class that creates the items for the Report
-    /// </summary>
+    // Class that creates the items for the Report
     public class ShoppingCartItems
     {
         private static int Id = 1;
@@ -30,7 +25,7 @@ namespace Krunker.Common
 
         public ShoppingCartItems(List<AbstractItem> Items)
         {
-            items = Items;
+            this.items = Items;
             ID = Id++;
         }
 

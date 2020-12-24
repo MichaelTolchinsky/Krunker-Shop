@@ -1,23 +1,9 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.BL.Service;
-using Krunker.Common;
-using Krunker.DAL.Repository;
+﻿using Krunker.Common;
 using Microsoft.Toolkit.Uwp.UI.Controls;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using static Krunker.BL.Service.Service;
 
 
 namespace Krunker.UI
@@ -29,12 +15,13 @@ namespace Krunker.UI
         {
             this.InitializeComponent();
         }
+        // Recieves data when navagated to
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             dataGrid.ItemsSource = e.Parameter as List<ShoppingCartItems>;
             base.OnNavigatedTo(e);
         }
-
+        // naviga back to main page
         private void ReturnBtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

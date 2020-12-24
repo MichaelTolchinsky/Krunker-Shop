@@ -1,44 +1,21 @@
 ﻿using ConsoleAppDataBSela.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Krunker.Common.Api
 {
     public interface IRepository<T> where T : AbstractItem
     {
-        /// <summary>
-        /// Returns specific item by id
-        /// </summary>
-        /// <param name="itemId"></param>
-        /// <returns></returns>
+        // Returns specific item by id
         T GetItemById(int itemId);
-        /// <summary>
-        /// Create new item
-        /// </summary>
-        /// <param name="item"></param>
+        // Create new item
         void ItemCreate(T item);
-        /// <summary>
-        /// Deletes specific item by id
-        /// </summary>
-        /// <param name="ItemId"></param>
+        // Deletes specific item by id
         void ItemDelete(int ItemId);
-        /// <summary>
-        /// Update item amount
-        /// </summary>
-        /// <param name="Item"></param>
+        // Update item amount
         void ItemUpdate(T Item);
-        /// <summary>
-        /// return items list as Abstractitem
-        /// </summary>
-        /// <returns></returns>
+        // return items list as Abstractitem
         List<AbstractItem> GetItems();
-        /// <summary>
-        /// Update the amout of all items in recieved list in repository
-        /// </summary>
-        /// <param name="list"></param>
-         void UpdateRepository(IEnumerable<T> list);
+        // Update the amout of all items in recieved list in repository
+        void UpdateRepository(IEnumerable<T> list);
     }
 }

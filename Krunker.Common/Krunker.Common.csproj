@@ -121,7 +121,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Api\IRepository.cs" />
-    <Compile Include="Api\IService.cs" />
+    <Compile Include="Api\IDataService.cs" />
     <Compile Include="Models\AbstractItem.cs" />
     <Compile Include="Models\BackItem.cs" />
     <Compile Include="Models\HeadItem.cs" />
