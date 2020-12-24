@@ -1,22 +1,13 @@
 ﻿using ConsoleAppDataBSela.Model;
 using Krunker.BL.Service;
 using Krunker.Common;
-using Krunker.DAL.Repository;
+using Krunker.DAL.DataAccess;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI;
-using Windows.UI.Core.Preview;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -170,7 +161,7 @@ namespace Krunker.UI
             if (result == ContentDialogResult.Primary)
             {
 
-                Service.Instance.RemoveCartItems();
+                Service.Instance.CartCheckout();
                 ItemsTbl.Text = "";
                 foreach (var item in ShopListLv.Items)
                     (item as ComboBox).SelectedItem = null;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.Xaml;
 
-namespace Krunker.DAL.Repository
+namespace Krunker.DAL.DataAccess
 {
     public class Data
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Krunker.DAL.Repository
+namespace Krunker.Common.Api
 {
     public interface IRepository<T> where T : AbstractItem
     {

@@ -120,6 +120,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Api\IRepository.cs" />
+    <Compile Include="Api\IService.cs" />
     <Compile Include="Models\AbstractItem.cs" />
     <Compile Include="Models\BackItem.cs" />
     <Compile Include="Models\HeadItem.cs" />
@@ -135,6 +137,7 @@
       <Version>6.2.9</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

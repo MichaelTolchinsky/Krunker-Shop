@@ -121,9 +121,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Repository\BackItemRepository.cs" />
-    <Compile Include="Repository\Data.cs" />
+    <Compile Include="DataAccess\Data.cs" />
     <Compile Include="Repository\HeadItemRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\PrimaryWeaponsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SecondaryWeaponRepository.cs" />

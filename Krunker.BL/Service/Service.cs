@@ -1,5 +1,6 @@
 ﻿using ConsoleAppDataBSela.Model;
 using Krunker.Common;
+using Krunker.Common.Api;
 using Krunker.DAL.Repository;
 using System;
 using System.Collections;
@@ -136,7 +137,7 @@ namespace Krunker.BL.Service
             return sum;
         }
 
-        public void RemoveCartItems()
+        public void CartCheckout()
         {
             var FuncByType = new Dictionary<Type, Action<AbstractItem>> {
               { typeof(HeadItem), (ab) => hats.ItemUpdate((HeadItem)ab) },
