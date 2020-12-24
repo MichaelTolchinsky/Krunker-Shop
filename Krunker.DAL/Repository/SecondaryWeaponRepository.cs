@@ -1,8 +1,8 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.Common.Api;
+﻿using Krunker.Common.Api;
+using Krunker.Common.Models;
 using System;
 using System.Collections.Generic;
-using static ConsoleAppDataBSela.Model.SecondaryWeapon;
+using static Krunker.Common.Models.SecondaryWeapon;
 
 namespace Krunker.DAL.Repository
 {

@@ -1,4 +1,4 @@
-﻿using ConsoleAppDataBSela.Model;
+﻿using Krunker.Common.Models;
 using System.Collections.Generic;
 
 namespace Krunker.Common.Api

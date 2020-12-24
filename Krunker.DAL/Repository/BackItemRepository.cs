@@ -1,5 +1,5 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.Common.Api;
+﻿using Krunker.Common.Api;
+using Krunker.Common.Models;
 using System;
 using System.Collections.Generic;
 

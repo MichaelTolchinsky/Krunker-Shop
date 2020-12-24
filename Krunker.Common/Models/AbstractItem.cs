@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace ConsoleAppDataBSela.Model
+namespace Krunker.Common.Models
 {
     public abstract class AbstractItem : IEquatable<AbstractItem>
     {

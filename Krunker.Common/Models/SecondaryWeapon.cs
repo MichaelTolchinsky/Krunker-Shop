@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ConsoleAppDataBSela.Model
+namespace Krunker.Common.Models
 {
     public class SecondaryWeapon : Weapon
     {

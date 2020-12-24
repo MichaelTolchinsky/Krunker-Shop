@@ -1,11 +1,11 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.Common.Api;
+﻿using Krunker.Common.Api;
 using Krunker.Common;
 using Krunker.DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Krunker.Common.Models;
 
 namespace Krunker.BL.Service
 {

@@ -1,5 +1,5 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.Common;
+﻿using Krunker.Common;
+using Krunker.Common.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

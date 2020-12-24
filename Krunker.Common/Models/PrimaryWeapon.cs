@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleAppDataBSela.Model
+namespace Krunker.Common.Models
 {
     public class PrimaryWeapon : Weapon
     {

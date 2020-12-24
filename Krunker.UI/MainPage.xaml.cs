@@ -1,6 +1,6 @@
-﻿using ConsoleAppDataBSela.Model;
-using Krunker.BL.Service;
+﻿using Krunker.BL.Service;
 using Krunker.Common;
+using Krunker.Common.Models;
 using Krunker.DAL.DataAccess;
 using System;
 using System.Collections.Generic;
