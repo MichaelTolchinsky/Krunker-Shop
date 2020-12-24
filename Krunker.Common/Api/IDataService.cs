@@ -9,7 +9,6 @@ namespace Krunker.Common.Api
         List<AbstractItem> GetAllItems();
         // return the list of chosen type from Repository
         List<AbstractItem> GetItems<T>() where T : AbstractItem;
-        void AddItem(AbstractItem item);
         // Add the item that the user have chosen to the ShoppingCart
         void AddToCart(AbstractItem item);
         // String that contains all the items in the current cart

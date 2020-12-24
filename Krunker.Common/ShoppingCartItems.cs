@@ -34,6 +34,7 @@ namespace Krunker.Common
             string names = "";
             foreach (var item in items)
                 names += $"{item.Name}\n";
+            names += "Total Sum";
 
             return names;
         }

@@ -20,15 +20,10 @@ namespace Krunker.BL.Service
         private readonly SecondaryWeaponRepository secondaryWeapons;
 
         private readonly Dictionary<Type, AbstractItem> shoppingCart;
-
         private readonly List<AbstractItem> items;
-        /// <summary>
-        /// Carts list for the report
-        /// </summary>
 
-        /// <summary>
-        /// singelton Service
-        /// </summary>
+
+        // singelton Service
         private static DataService instance = null;
         public static DataService Instance
         {
@@ -42,9 +37,7 @@ namespace Krunker.BL.Service
             }
         }
 
-        /// <summary>
-        ///Ctor Creates repositories and adds items to items list
-        /// </summary>
+        // Ctor Creates repositories and adds items to items list
         private DataService()
         {
             items = new List<AbstractItem>();
@@ -64,8 +57,9 @@ namespace Krunker.BL.Service
             items.AddRange(bags.GetItems());
         }
 
+        //return all items
         public List<AbstractItem> GetAllItems() => items;
-
+        //returns items by type
         public List<AbstractItem> GetItems<T>() where T : AbstractItem
         {
 
@@ -80,24 +74,12 @@ namespace Krunker.BL.Service
             else
                 throw new ArgumentException("No such type");
         }
-
-        public void AddItem(AbstractItem item)
-        {
-            Dictionary<Type, Action> methodType = new Dictionary<Type, Action>()
-            {
-                {typeof(PrimaryWeapon),() => primaryWeapons.ItemCreate((PrimaryWeapon)item) },
-                {typeof(SecondaryWeapon),() => secondaryWeapons.ItemCreate((SecondaryWeapon)item) },
-                {typeof(HeadItem),() => hats.ItemCreate((HeadItem)item) },
-                {typeof(BackItem),() => bags.ItemCreate((BackItem)item) },
-            };
-            methodType[item.GetType()]();
-        }
-
+        //add item to cart
         public void AddToCart(AbstractItem item)
         {
             shoppingCart[item.GetType()] = item;
         }
-
+        //return cart items
         public string GetCartItems()
         {
             StringBuilder sb = new StringBuilder();
@@ -109,7 +91,7 @@ namespace Krunker.BL.Service
 
             return sb.ToString();
         }
-
+        // calculates cart total sum
         public double CalculateCart()
         {
             double sum = 0;
@@ -118,7 +100,7 @@ namespace Krunker.BL.Service
 
             return sum;
         }
-
+        
         public void CartCheckout()
         {
             var FuncByType = new Dictionary<Type, Action<AbstractItem>> {
